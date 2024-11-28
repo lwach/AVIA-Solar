@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procesy Sklepu Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f4f4f9, #e30613);
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+        }
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 80%;
+            max-width: 1000px;
+        }
+        .process-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .process-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .process-card i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #e30613;
+        }
+        .process-card h2 {
+            font-size: 1.5rem;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+</head>
+<body>
+    <h1>AVIA Solar</h1>
+    <div class="process-grid">
+        <a href="procesy/produkty.html" class="process-card">
+            <i class="fas fa-box-open"></i>
+            <h2>Zarządzanie Produktami</h2>
+        </a>
+        <a href="procesy/zamówienia.html" class="process-card">
+            <i class="fas fa-shopping-cart"></i>
+            <h2>Obsługa Zamówień</h2>
+        </a>
+        <a href="procesy/platnosci.html" class="process-card">
+            <i class="fas fa-credit-card"></i>
+            <h2>Płatności</h2>
+        </a>
+        <a href="procesy/reklamacje.html" class="process-card">
+            <i class="fas fa-undo-alt"></i>
+            <h2>Reklamacje</h2>
+        </a>
+        <a href="procesy/obsluga3.html" class="process-card">
+            <i class="fas fa-headset"></i>
+            <h2>Obsługa Klienta</h2>
+        </a>
+        <a href="procesy/klienci.html" class="process-card">
+            <i class="fas fa-user-plus"></i>
+            <h2>Nowi Klienci</h2>
+        </a>
+        <a href="procesy/zespol.html" class="process-card">
+            <i class="fas fa-users"></i>
+            <h2>Zespół</h2>
+        </a>
+        <a href="procesy/taski_trello.html" class="process-card">
+            <i class="fas fa-tasks"></i>
+            <h2>Taski Trello</h2>
+        </a>
+    </div>
+</body>
+</html>

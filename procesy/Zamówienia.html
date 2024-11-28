@@ -1,0 +1,147 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsługa Zamówień</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "base",
+            themeVariables: {
+                primaryColor: "#81c784",
+                secondaryColor: "#e3f2fd",
+                tertiaryColor: "#ffcc80",
+                primaryTextColor: "#212121",
+                secondaryTextColor: "#000000",
+                edgeLabelBackground: "#ffffff",
+                fontFamily: "Verdana, sans-serif",
+                fontSize: "14px",
+            },
+            flowchart: {
+                curve: "basis"
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom right, #1a73e8, #e30613);
+            color: white;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+        h2, h3 {
+            font-size: 1.8rem;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .left-align h3 {
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        .left-align ul {
+            text-align: left;
+            padding-left: 40px;
+            margin-bottom: 30px;
+        }
+        .mermaid-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        .mermaid {
+            width: 90%;
+            text-align: center;
+        }
+        .responsibility {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .button-container a {
+            text-decoration: none;
+            background: #ff9800;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .button-container a:hover {
+            background: #ffb74d;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Obsługa Zamówień</h1>
+    </header>
+    <main>
+        <section class="left-align">
+            <h3>Procesy Ręczne</h3>
+            <ul>
+                <li>Zmiana statusu zamówienia</li>
+            </ul>
+            <h3>Procesy Automatyczne</h3>
+            <ul>
+                <li>Wystawienie Rezerwacji Odbiorcy (RO) w Optimie</li>
+                <li>Przekształcenie RO w Fakturę VAT i WZ-kę</li>
+                <li>Wysyłka faktury do klienta na e-mail</li>
+            </ul>
+        </section>
+        <div class="button-container">
+            <a href="Obsługa zamówień.pdf" target="_blank">Instrukcja obsługi zamówień</a>
+        </div>
+        <h2>Ścieżka zamówień</h2>
+        <div class="mermaid-container">
+            <div class="mermaid">
+                graph TD
+                    A[Złożenie zamówienia przez klienta] --> B[Podział klientów]
+                    B -->|Firmowy/B2B| C[Panel administracyjny - widoczność zamówienia]
+                    B -->|Detaliczny/osoba fizyczna| C
+                    C --> D[Automatyczne generowanie RO w Optimie]
+                    D --> E{Czy status zamówienia<br>Zaakceptowane?<br>👨 Emil, 👩 Sylwia, 👩 Kasia}
+                    E -->|Nie| F[Możliwość edycji RO i zamówienia]
+                    E -->|Tak| G[Generowanie FV i WZ]
+                    G --> H[Wysyłka FV na e-mail klienta]
+            </div>
+        </div>
+        <div class="responsibility">
+            <p><strong>Odpowiedzialni za weryfikację zamówień i zmianę statusu:</strong> 👨 Emil, 👩 Sylwia, 👩 Kasia</p>
+        </div>
+    </main>
+</body>
+</html>

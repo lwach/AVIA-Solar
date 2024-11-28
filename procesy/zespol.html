@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zespół i Procesy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #f4f4f9, #e30613);
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #ffffff;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+        .user-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+        .user-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .user-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        .user-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e30613;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .user-name {
+            font-size: 1rem;
+            margin: 5px 0;
+        }
+        .process-list {
+            display: none;
+            margin-top: 20px;
+        }
+        .process-list.active {
+            display: block;
+        }
+        .process-item {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        .process-item:hover {
+            background: #e30613;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Zespół i Procesy</h1>
+    <div class="user-grid">
+        <div class="user-card" onclick="showProcesses('emil')">
+            <div class="user-avatar">E</div>
+            <div class="user-name">Emil</div>
+            <div>Liczba procesów: 6</div>
+        </div>
+        <div class="user-card" onclick="showProcesses('sylwia')">
+            <div class="user-avatar">S</div>
+            <div class="user-name">Sylwia</div>
+            <div>Liczba procesów: 6</div>
+        </div>
+        <div class="user-card" onclick="showProcesses('kasia')">
+            <div class="user-avatar">K</div>
+            <div class="user-name">Kasia</div>
+            <div>Liczba procesów: 5</div>
+        </div>
+        <div class="user-card" onclick="showProcesses('zaneta')">
+            <div class="user-avatar">Ż</div>
+            <div class="user-name">Żaneta</div>
+            <div>Liczba procesów: 4</div>
+        </div>
+        <div class="user-card" onclick="showProcesses('lukasz')">
+            <div class="user-avatar">Ł</div>
+            <div class="user-name">Łukasz</div>
+            <div>Liczba procesów: 3</div>
+        </div>
+    </div>
+
+    <!-- Process Lists -->
+    <div id="emil" class="process-list">
+        <h2>Procesy Emila</h2>
+        <div class="process-item" onclick="navigateToProcess('Produkty.html')">Zarządzanie Produktami</div>
+        <div class="process-item" onclick="navigateToProcess('Zamówienia.html')">Obsługa Zamówień</div>
+        <div class="process-item" onclick="navigateToProcess('Platnosci.html')">Płatności</div>
+        <div class="process-item" onclick="navigateToProcess('Reklamacje.html')">Reklamacje</div>
+        <div class="process-item" onclick="navigateToProcess('obsluga3.html')">Obsługa Klienta</div>
+    </div>
+    <div id="sylwia" class="process-list">
+        <h2>Procesy Sylwii</h2>
+        <div class="process-item" onclick="navigateToProcess('Produkty.html')">Zarządzanie Produktami</div>
+        <div class="process-item" onclick="navigateToProcess('Zamówienia.html')">Obsługa Zamówień</div>
+        <div class="process-item" onclick="navigateToProcess('Platnosci.html')">Płatności</div>
+        <div class="process-item" onclick="navigateToProcess('Reklamacje.html')">Reklamacje</div>
+        <div class="process-item" onclick="navigateToProcess('obsluga3.html')">Obsługa Klienta</div>
+    </div>
+    <div id="kasia" class="process-list">
+        <h2>Procesy Kasi</h2>
+        <div class="process-item" onclick="navigateToProcess('Produkty.html')">Zarządzanie Produktami</div>
+        <div class="process-item" onclick="navigateToProcess('Zamówienia.html')">Obsługa Zamówień</div>
+        <div class="process-item" onclick="navigateToProcess('Platnosci.html')">Płatności</div>
+        <div class="process-item" onclick="navigateToProcess('Reklamacje.html')">Reklamacje</div>
+    </div>
+    <div id="zaneta" class="process-list">
+        <h2>Procesy Żanety</h2>
+        <div class="process-item" onclick="navigateToProcess('Produkty.html')">Zarządzanie Produktami</div>
+        <div class="process-item" onclick="navigateToProcess('obsluga3.html')">Obsługa Klienta</div>
+    </div>
+    <div id="lukasz" class="process-list">
+        <h2>Procesy Łukasza</h2>
+        <div class="process-item" onclick="navigateToProcess('Produkty.html')">Zarządzanie Produktami</div>
+        <div class="process-item" onclick="navigateToProcess('Platnosci.html')">Płatności</div>
+    </div>
+
+    <script>
+        function showProcesses(userId) {
+            document.querySelectorAll('.process-list').forEach(list => list.classList.remove('active'));
+            document.getElementById(userId).classList.add('active');
+        }
+        function navigateToProcess(url) {
+            window.location.href = url;
+        }
+    </script>
+</body>
+</html>
